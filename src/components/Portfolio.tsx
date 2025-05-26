@@ -14,7 +14,6 @@ import {
   TableRow,
   Paper,
 } from '@mui/material';
-import { useWeb3React } from '@web3-react/core';
 
 const Portfolio: React.FC = () => {
 
