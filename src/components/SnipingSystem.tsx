@@ -15,6 +15,7 @@ import {
 import { useWeb3React } from '@web3-react/core';
 import { Web3Service } from '../services/web3Service';
 import { GAS_CONFIG, DEFAULT_SLIPPAGE } from '../config/constants';
+import { ethers } from 'ethers';
 
 interface SnipeSettings {
   gasLimit: number;
