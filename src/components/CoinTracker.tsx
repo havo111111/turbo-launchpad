@@ -18,7 +18,6 @@ import {
 } from '@mui/icons-material';
 import PlaceholderImage from './PlaceholderImage';
 import { useWeb3React } from '@web3-react/core';
-import { Web3Service } from '../services/web3Service';
 
 interface Coin {
   address: string;
