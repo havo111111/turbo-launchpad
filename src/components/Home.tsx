@@ -6,77 +6,118 @@ import {
   Grid,
   Card,
   CardContent,
+  CardMedia,
+  Container,
+  Paper,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import PlaceholderImage from './PlaceholderImage';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ textAlign: 'center', mb: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom>
           Turbo Launchpad
         </Typography>
         <Typography variant="h5" color="textSecondary" paragraph>
-          Your Ultimate Memecoin Trading Platform
+          Your Intelligent Token Launchpad and Trading Platform
         </Typography>
         <Button
           variant="contained"
           color="primary"
           size="large"
-          onClick={() => navigate('/tracker')}
+          onClick={() => navigate('/tokens')}
           sx={{ mt: 2 }}
         >
-          Start Sniping
+          Explore Tokens
         </Button>
       </Box>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <Card>
-            <PlaceholderImage width={300} height={140} text="Coin Tracker" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Coin Tracker
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Track newly launched memecoins in real-time
-              </Typography>
-            </CardContent>
-          </Card>
+          <Paper
+            elevation={3}
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              p: 3,
+            }}
+          >
+            <Typography variant="h5" gutterBottom>
+              Token Launching
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Launch your own tokens with AI-powered optimization
+            </Typography>
+            <Button
+              variant="outlined"
+              onClick={() => navigate('/create')}
+              sx={{ mt: 2 }}
+            >
+              Launch Token
+            </Button>
+          </Paper>
         </Grid>
 
         <Grid item xs={12} md={4}>
-          <Card>
-            <PlaceholderImage width={300} height={140} text="Launchpad" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Launchpad
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Launch your own memecoin with ease
-              </Typography>
-            </CardContent>
-          </Card>
+          <Paper
+            elevation={3}
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              p: 3,
+            }}
+          >
+            <Typography variant="h5" gutterBottom>
+              Token Trading
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Trade tokens instantly with AI-powered smart routing
+            </Typography>
+            <Button
+              variant="outlined"
+              onClick={() => navigate('/tokens')}
+              sx={{ mt: 2 }}
+            >
+              Trade Tokens
+            </Button>
+          </Paper>
         </Grid>
 
         <Grid item xs={12} md={4}>
-          <Card>
-            <PlaceholderImage width={300} height={140} text="Trading" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Trading
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Trade memecoins instantly with optimized gas
-              </Typography>
-            </CardContent>
-          </Card>
+          <Paper
+            elevation={3}
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              p: 3,
+            }}
+          >
+            <Typography variant="h5" gutterBottom>
+              Portfolio
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Track your token portfolio and performance
+            </Typography>
+            <Button
+              variant="outlined"
+              onClick={() => navigate('/portfolio')}
+              sx={{ mt: 2 }}
+            >
+              View Portfolio
+            </Button>
+          </Paper>
         </Grid>
       </Grid>
-    </Box>
+    </Container>
   );
 };
 
