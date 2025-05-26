@@ -6,9 +6,9 @@ import {
   Grid,
   Card,
   CardContent,
-  CardMedia,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import PlaceholderImage from './PlaceholderImage';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -36,12 +36,7 @@ const Home: React.FC = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Card>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/images/tracker.png"
-              alt="Coin Tracker"
-            />
+            <PlaceholderImage width={300} height={140} text="Coin Tracker" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 Coin Tracker
@@ -55,12 +50,7 @@ const Home: React.FC = () => {
 
         <Grid item xs={12} md={4}>
           <Card>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/images/launchpad.png"
-              alt="Launchpad"
-            />
+            <PlaceholderImage width={300} height={140} text="Launchpad" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 Launchpad
@@ -74,12 +64,7 @@ const Home: React.FC = () => {
 
         <Grid item xs={12} md={4}>
           <Card>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/images/trading.png"
-              alt="Trading"
-            />
+            <PlaceholderImage width={300} height={140} text="Trading" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 Trading
