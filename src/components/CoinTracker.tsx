@@ -9,25 +9,16 @@ import {
   Button,
   TextField,
   InputAdornment,
-  Chip,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-  Divider,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import {
-  Search as SearchIcon,
-  FilterList as FilterIcon,
   TrendingUp as TrendingIcon,
-  TrendingDown as TrendingDownIcon,
   Star as StarIcon,
 } from '@mui/icons-material';
 import PlaceholderImage from './PlaceholderImage';
 import { useWeb3React } from '@web3-react/core';
 import { Web3Service } from '../services/web3Service';
-import { GAS_CONFIG, DEFAULT_SLIPPAGE } from '../config/constants';
 
 interface Coin {
   address: string;
