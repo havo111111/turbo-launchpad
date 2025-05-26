@@ -17,7 +17,6 @@ import {
 import { useWeb3React } from '@web3-react/core';
 
 const Portfolio: React.FC = () => {
-  const { account } = useWeb3React();
 
   const portfolioData = [
     {

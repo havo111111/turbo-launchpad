@@ -4,7 +4,6 @@ import { useWeb3React } from '@web3-react/core';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { InjectedConnector } from '@web3-react/injected-connector';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
 import TokenIcon from '@mui/icons-material/Token';
 import LaunchIcon from '@mui/icons-material/Launch';
 import PortfolioIcon from '@mui/icons-material/AccountBalanceWallet';
