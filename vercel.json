@@ -13,7 +13,7 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
