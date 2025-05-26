@@ -4,18 +4,10 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/react"
     }
   ],
   "routes": [
-    {
-      "src": "/_next/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/_next/(.*)",
-      "dest": "/$1"
-    },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
