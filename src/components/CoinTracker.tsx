@@ -24,6 +24,7 @@ import {
   TrendingDown as TrendingDownIcon,
   Star as StarIcon,
 } from '@mui/icons-material';
+import PlaceholderImage from './PlaceholderImage';
 import { useWeb3React } from '@web3-react/core';
 import { Web3Service } from '../../services/web3Service';
 import { GAS_CONFIG, DEFAULT_SLIPPAGE } from '../../config/constants';
@@ -117,7 +118,7 @@ const CoinTracker: React.FC = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <PlaceholderImage width={20} height={20} text="Search" />
               </InputAdornment>
             ),
           }}
@@ -125,7 +126,7 @@ const CoinTracker: React.FC = () => {
         <Button
           variant="contained"
           color="primary"
-          startIcon={<FilterIcon />}
+          startIcon={<PlaceholderImage width={20} height={20} text="Filter" />}
           sx={{ ml: isMobile ? 0 : 2 }}
         >
           Filters
@@ -157,6 +158,7 @@ const CoinTracker: React.FC = () => {
                 }}
               >
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                  <PlaceholderImage width={200} height={150} text="Coin Tracker" />
                   <Typography variant="h6" component="div">
                     {coin.name}
                   </Typography>
@@ -164,6 +166,7 @@ const CoinTracker: React.FC = () => {
                     onClick={() => handleToggleFavorite(coin.address)}
                     color={favorites.includes(coin.address) ? 'primary' : 'default'}
                   >
+                    <PlaceholderImage width={20} height={20} text="Star" />
                     <StarIcon />
                   </IconButton>
                 </Box>
