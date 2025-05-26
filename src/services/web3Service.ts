@@ -1,6 +1,5 @@
 import { ethers } from 'ethers';
 
-const CHAIN_ID = Number(process.env.REACT_APP_CHAIN_ID || 56);
 const GAS_CONFIG = {
   defaultGasLimit: Number(process.env.REACT_APP_DEFAULT_GAS_LIMIT || 21000),
   maxPriorityFeePerGas: Number(process.env.REACT_APP_MAX_PRIORITY_FEE_PER_GAS || 1000000000),

@@ -41,7 +41,6 @@ const CoinTracker: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
-  const web3Service = new Web3Service(library);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
