@@ -14,7 +14,7 @@ export class HyperEVMService {
   private latestBlockNumber: number = 0;
   private verifiedContracts: Set<string> = new Set();
   private readonly HYPE_TOKEN = '0x0d01dc56dcaaca66ad901c959b4011ec';
-  private readonly VERIFICATION_CONTRACT = '0x1234567890123456789012345678901234567890'; // Replace with actual verification contract
+  private readonly VERIFICATION_CONTRACT = '0x0d01dc56dcaaca66ad901c959b4011ec'; // HYPE token contract address
 
   constructor() {
     this.provider = new ethers.providers.JsonRpcProvider(config.rpcUrl);
