@@ -1,5 +1,11 @@
 import { ethers } from 'ethers';
-import { CHAIN_ID, GAS_CONFIG } from '../config/constants';
+
+const CHAIN_ID = Number(process.env.REACT_APP_CHAIN_ID || 56);
+const GAS_CONFIG = {
+  defaultGasLimit: Number(process.env.REACT_APP_DEFAULT_GAS_LIMIT || 21000),
+  maxPriorityFeePerGas: Number(process.env.REACT_APP_MAX_PRIORITY_FEE_PER_GAS || 1000000000),
+  maxFeePerGas: Number(process.env.REACT_APP_MAX_FEE_PER_GAS || 2000000000),
+};
 
 export class Web3Service {
   private provider: ethers.providers.Web3Provider;
