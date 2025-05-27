@@ -25,7 +25,6 @@ export const CreateToken: React.FC = () => {
     try {
       const provider = new ethers.providers.Web3Provider(library);
       const signer = provider.getSigner();
-      const hyperEVMService = new HyperEVMService();
 
       // Check if user has enough HYPE
       const hypeContract = new ethers.Contract(

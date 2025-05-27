@@ -25,7 +25,6 @@ export const TokenList: React.FC = () => {
       if (!library) return;
 
       try {
-        const provider = new ethers.providers.Web3Provider(library);
         const hyperEVMService = new HyperEVMService();
         const newTokens = await hyperEVMService.scanForNewCoins();
         setTokens(newTokens);

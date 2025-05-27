@@ -1,36 +1,14 @@
 import { ethers } from 'ethers';
 import { Coin } from '../types';
-import { config, Config, ContractAddresses } from '../config';
+import { config } from '../config';
 
 export { config };
 
-interface ContractFunctions {
-  isVerified: (address: string) => Promise<boolean>;
-  getHYPEBalance: (address: string) => Promise<string>;
-  getTokenPrice: (address: string) => Promise<string>;
-  getBondingProgress: (address: string) => Promise<string>;
-  getBondingAPY: (address: string) => Promise<string>;
-  getBuyTax: (address: string) => Promise<string>;
-  getSellTax: (address: string) => Promise<string>;
-  getBondingPool: (address: string) => Promise<string>;
-  isBonding: (address: string) => Promise<boolean>;
-}
-
-interface NewCoinEvent {
-  address: string;
-  name: string;
-  symbol: string;
-  timestamp: number;
-}
-
 export class HyperEVMService {
   private provider: ethers.providers.JsonRpcProvider;
-  private contract: ethers.Contract & ContractFunctions;
+  private contract: ethers.Contract;
   private latestBlockNumber: number = 0;
   private verifiedContracts: Set<string> = new Set();
-  private readonly HYPE_TOKEN: string;
-  private readonly CONTRACT_ADDRESS: string;
-  private readonly VERIFICATION_CONTRACT: string;
 
   constructor() {
     this.provider = new ethers.providers.JsonRpcProvider(config.rpcUrl);
