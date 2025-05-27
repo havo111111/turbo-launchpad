@@ -3,22 +3,14 @@
   "name": "turbo-launchpad",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/react-18",
+      "src": "src/index.tsx",
+      "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
       }
     }
   ],
   "routes": [
-    {
-      "src": "/service-worker.js",
-      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
-    },
-    {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
-    },
     {
       "src": "/.*",
       "dest": "/index.html"
