@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             }}
           >
             <Box sx={{ mb: 2 }}>
-              <img src="/images/placeholder-token.png" alt="Token Launching" style={{ width: '100%', height: 'auto' }} />
+              <img src={`${process.env.PUBLIC_URL}/images/placeholder-token.png`} alt="Token Launching" style={{ width: '100%', height: 'auto' }} />
             </Box>
             <Typography variant="h5" gutterBottom>
               Token Launching
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
             }}
           >
             <Box sx={{ mb: 2 }}>
-              <img src="/images/placeholder-launchpad.png" alt="Token Trading" style={{ width: '100%', height: 'auto' }} />
+              <img src={`${process.env.PUBLIC_URL}/images/placeholder-launchpad.png`} alt="Token Trading" style={{ width: '100%', height: 'auto' }} />
             </Box>
             <Typography variant="h5" gutterBottom>
               Token Trading
