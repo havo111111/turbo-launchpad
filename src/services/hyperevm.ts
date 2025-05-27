@@ -118,7 +118,6 @@ export class HyperEVMService {
 
   async scanForNewCoins(): Promise<Coin[]> {
     try {
-      const filter = this.contract.filters.TokenCreated();
       const events = await this.provider.getLogs({
         address: config.contractAddresses.main,
         fromBlock: await this.getLatestBlockNumber() - 100,

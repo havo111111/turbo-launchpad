@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import { useWeb3React } from '@web3-react/core';
 import { Button, TextField, Box, Typography, CircularProgress } from '@mui/material';
-import { HyperEVMService, config } from '../services/hyperevm';
+import { config } from '../services/hyperevm';
 
 export const CreateToken: React.FC = () => {
   const { account, library } = useWeb3React();
