@@ -1,6 +1,6 @@
 {
   "name": "turbo-launchpad",
-  "homepage": "/",
+  "homepage": "/turbo-launchpad/",
   "version": "1.0.1",
   "private": true,
   "dependencies": {
