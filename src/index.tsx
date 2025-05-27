@@ -2,6 +2,21 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
+// Handle Metamask injection
+if (typeof window.ethereum !== 'undefined') {
+  // Prevent Metamask from injecting its provider multiple times
+  window.ethereum = window.ethereum;
+}
+
+// Add script to load Metamask if not already present
+if (!document.getElementById('metamask-script')) {
+  const script = document.createElement('script');
+  script.id = 'metamask-script';
+  script.src = 'https://cdn.jsdelivr.net/npm/@metamask/inpage-provider/dist/metamask-inpage-provider.min.js';
+  script.async = true;
+  document.head.appendChild(script);
+}
+
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
