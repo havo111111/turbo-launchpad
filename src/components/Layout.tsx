@@ -11,18 +11,19 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import { useNavigate } from 'react-router-dom';
 
 const injected = new InjectedConnector({
-  supportedChainIds: [56], // BSC Mainnet
+  supportedChainIds: [1], // HyperEVM chain ID
 });
 
 const walletconnect = new WalletConnectConnector({
   rpc: {
-    56: 'https://bsc-dataseed.binance.org/',
+    1: 'https://rpc.hyperliquid.xyz/evm',
   },
 });
 
 const menuItems = [
-  { text: 'Tokens', icon: <TokenIcon />, path: '/tokens' },
-  { text: 'Create', icon: <LaunchIcon />, path: '/create' },
+  { text: 'Home', icon: <TokenIcon />, path: '/' },
+  { text: 'Tokens', icon: <TokenIcon />, path: '/coins' },
+  { text: 'Launchpad', icon: <LaunchIcon />, path: '/launchpad' },
   { text: 'Portfolio', icon: <PortfolioIcon />, path: '/portfolio' },
   { text: 'Leaderboard', icon: <LeaderboardIcon />, path: '/leaderboard' },
 ];
@@ -50,7 +51,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
