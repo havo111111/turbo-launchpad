@@ -3,7 +3,7 @@ import { PrivyProvider } from '@privy-io/react-auth';
 import { ethers } from 'ethers';
 
 interface PrivyContextType {
-  wallet: any | null;
+  wallet: Record<string, any> | null;
   isConnected: boolean;
   connect: () => void;
   disconnect: () => void;
@@ -43,9 +43,8 @@ export const PrivyProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ 
       }}
     >
       <PrivyProvider
-        appId="YOUR_APP_ID" // You'll need to replace this with your actual Privy app ID
+        appId="cmb5x1t1w00ihl20m4oyfw2vp"
         config={{
-          theme: 'dark',
           showQRCode: true,
           showWalletConnect: true,
           showEmail: true,
