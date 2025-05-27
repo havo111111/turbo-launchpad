@@ -43,7 +43,8 @@ export const PrivyProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ 
       }}
     >
       <PrivyProvider
-        appId="cmb5x1t1w00ihl20m4oyfw2vp"
+        appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || "cmb5x1t1w00ihl20m4oyfw2vp"}
+        secret={process.env.PRIVY_APP_SECRET}
         config={{
           showQRCode: true,
           showWalletConnect: true,
