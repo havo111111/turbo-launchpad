@@ -4,13 +4,20 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     }
   ],
   "routes": [
     {
+      "src": "/service-worker.js",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
+    },
+    {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" }
     },
     {
       "src": "/.*",
