@@ -55,17 +55,25 @@ export const getNewCoins = async (): Promise<Coin[]> => {
             
             newCoins.push({
               address: receipt.contractAddress,
-              name,
-              symbol,
+              name: name as string,
+              symbol: symbol as string,
               totalSupply: totalSupply.toString(),
               timestamp: block.timestamp * 1000,
-              volume24h: 0, // Will be updated later
-              price: 0, // Will be updated later
+              price: 0,
               priceChange24h: 0,
-              liquidity: 0, // Will be updated later
+              volume24h: 0,
+              liquidity: 0,
               holders: parseInt(holders, 16),
               verified: false,
               favorite: false,
+              marketCap: 0,
+              bondingProgress: 0,
+              bondingPrice: 0,
+              bondingAPY: 0,
+              buyTax: 0,
+              sellTax: 0,
+              isBonding: false,
+              bondingPool: ''
             });
           } catch (error) {
             console.error('Error processing token:', error);

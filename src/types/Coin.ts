@@ -11,4 +11,12 @@ export interface Coin {
   holders: number;
   verified: boolean;
   favorite: boolean;
+  marketCap: number;
+  bondingProgress: number;
+  bondingPrice: number;
+  bondingAPY: number;
+  buyTax: number;
+  sellTax: number;
+  isBonding: boolean;
+  bondingPool: string;
 }

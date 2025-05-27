@@ -2,6 +2,8 @@ import { ethers } from 'ethers';
 import { Coin } from '../types';
 import { config, Config, ContractAddresses } from '../config';
 
+export { config };
+
 interface ContractFunctions {
   isVerified: (address: string) => Promise<boolean>;
   getHYPEBalance: (address: string) => Promise<string>;

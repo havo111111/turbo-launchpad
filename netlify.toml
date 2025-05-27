@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NEXT_PUBLIC_RPC_URL = "https://rpc.hyperliquid.xyz/evm"
+  NEXT_PUBLIC_API_ENDPOINT = "https://api.turbo-launchpad.com"
+
+[context.production.environment]
+  NEXT_PUBLIC_RPC_URL = "https://rpc.hyperliquid.xyz/evm"
+  NEXT_PUBLIC_API_ENDPOINT = "https://api.turbo-launchpad.com"

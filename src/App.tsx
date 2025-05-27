@@ -12,18 +12,21 @@ import CoinTracker from './components/CoinTracker';
 import Launchpad from './components/Launchpad';
 import Portfolio from './components/Portfolio';
 import Leaderboard from './components/Leaderboard';
+import { TokenList } from './components/TokenList';
+import { CreateToken } from './components/CreateToken';
+import { TokenBonding } from './components/TokenBonding';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#4CAF50',
+      light: '#81C784',
+      dark: '#388E3C',
     },
     secondary: {
-      main: '#dc004e',
-      light: '#ff4081',
-      dark: '#c51162',
+      main: '#2196F3',
+      light: '#64B5F6',
+      dark: '#1976D2',
     },
     background: {
       default: '#f5f5f5',
@@ -43,7 +46,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -52,16 +55,19 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/tokens" element={<CoinTracker />} />
-              <Route path="/create" element={<Launchpad />} />
+              <Route path="/coins" element={<CoinTracker />} />
+              <Route path="/launchpad" element={<Launchpad />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/tokens" element={<TokenList />} />
+              <Route path="/create-token" element={<CreateToken />} />
+              <Route path="/token/:address" element={<TokenBonding tokenAddress={window.location.pathname.split('/')[2]} />} />
             </Routes>
           </Layout>
         </Router>
       </ThemeProvider>
     </Provider>
   );
-}
+};
 
 export default App;
