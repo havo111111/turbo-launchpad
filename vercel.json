@@ -12,6 +12,10 @@
   ],
   "routes": [
     {
+      "src": "/turbo-launchpad/(.*)",
+      "dest": "/$1"
+    },
+    {
       "src": "/.*",
       "dest": "/index.html"
     }
