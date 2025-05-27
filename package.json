@@ -1,6 +1,6 @@
 {
   "name": "turbo-launchpad",
-  "homepage": "/turbo-launchpad/",
+  "homepage": "/",
   "version": "1.0.1",
   "private": true,
   "dependencies": {
@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --homepage=/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
