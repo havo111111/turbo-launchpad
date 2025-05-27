@@ -26,16 +26,10 @@ export class HyperEVMService {
         'function getBondingProgress(address token) view returns (uint256)',
         'function getBondingAPY(address token) view returns (uint256)',
         'function getBuyTax(address token) view returns (uint256)',
-        'function getSellTax(address token) view returns (uint256)',
-        'function isBonding(address token) view returns (bool)',
-        'function getBondingPool(address token) view returns (address)'
+        'function getSellTax(address token) view returns (uint256)'
       ],
       this.provider
-    ) as ethers.Contract & ContractFunctions;
-
-    this.HYPE_TOKEN = config.contractAddresses.hypeToken;
-    this.CONTRACT_ADDRESS = config.contractAddresses.main;
-    this.VERIFICATION_CONTRACT = config.contractAddresses.verification;
+    );
   }
 
   async getCoinDetails(tokenAddress: string): Promise<Coin> {
@@ -126,7 +120,7 @@ export class HyperEVMService {
     try {
       const filter = this.contract.filters.TokenCreated();
       const events = await this.provider.getLogs({
-        address: this.CONTRACT_ADDRESS,
+        address: config.contractAddresses.main,
         fromBlock: await this.getLatestBlockNumber() - 100,
         toBlock: await this.getLatestBlockNumber()
       });
