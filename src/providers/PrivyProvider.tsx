@@ -33,6 +33,13 @@ export const PrivyProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ 
     setIsConnected(false);
   };
 
+  useEffect(() => {
+    console.log('Privy config:', {
+      appId: process.env.NEXT_PUBLIC_PRIVY_APP_ID,
+      hasSecret: !!process.env.PRIVY_APP_SECRET
+    });
+  }, []);
+
   return (
     <PrivyContext.Provider
       value={{
